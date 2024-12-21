@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Services</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Body and overall background */
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #2c3e50;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+            opacity: 0;
+            transform: translateY(-10px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        nav ul li:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        nav ul li:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        nav ul li:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        nav ul li:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ecf0f1;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 10px 15px;
+            position: relative;
+            transition: color 0.3s ease, transform 0.3s ease, border 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #2bc03c;
+            transform: translateY(-5px);
+            border-bottom: 2px solid #3ce74d;
+        }
+
+        /* Home Section */
+        .intro {
+            background: linear-gradient(135deg, rgba(41, 128, 185, 0.7), rgba(116, 109, 237, 0.7)), url('https://png.pngtree.com/thumb_back/fh260/background/20231002/pngtree-illustration-of-a-3d-render-showcasing-a-concept-of-web-ui-image_13584942.png');
+            background-size: cover;
+            background-position: center center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            transition: all 0.5s ease;
+        }
+
+        .intro h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .intro p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        /* About Us Section */
+        .about {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #ecf0f1;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            color: #34495e;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .about p {
+            font-size: 1.125rem;
+            color: #7f8c8d;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .services h2 {
+            font-size: 2.5rem;
+            color: #34495e;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .service {
+            margin-bottom: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .service:hover {
+            transform: translateY(-10px);
+        }
+
+        .service h3 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service p {
+            color: #7f8c8d;
+            font-size: 1.125rem;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 20px;
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .contact p {
+            font-size: 1.125rem;
+            margin-bottom: 50px;
+            color: #ecf0f1;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #34495e;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #bdc3c7;
+            border-radius: 6px;
+            font-size: 1rem;
+            background-color: #ecf0f1;
+            color: #34495e;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #e74c3c;
+            outline: none;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 14px;
+            font-size: 1.25rem;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #2bc03c;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #2bc03c;
+            /* Initial background color */
+            color: white;
+            /* Text color */
+            text-decoration: none;
+            /* Remove underline */
+            padding: 12px 24px;
+            /* Padding around text */
+            font-size: 1.1rem;
+            /* Font size */
+            font-weight: 600;
+            /* Bold text */
+            border-radius: 40px;
+            /* Rounded corners */
+            text-align: center;
+            /* Center align text */
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            /* Smooth transition for background, text color, transform, and box-shadow */
+        }
+
+        /* Hover State */
+        .cta-button:hover {
+            background-color: #27ae60;
+            /* Darker green on hover */
+            color: #ecf0f1;
+            /* Lighter text color */
+            transform: scale(1.40);
+            /* Slightly enlarge the button */
+        }
+
+        /* Focus State (for accessibility) */
+        .cta-button:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            /* Add a shadow when focused */
+        }
+
+        /* Optional: add a transition when the button is in its initial state (smooth load effect) */
+        .cta-button {
+            opacity: 0;
+            animation: fadeIn 0.6s forwards;
+            /* Fade-in animation */
+        }
+
+        /* Fade-in effect */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .intro h1 {
+                font-size: 2.5rem;
+            }
+
+            .intro p {
+                font-size: 1rem;
+            }
+
+            .about h2,
+            .services h2,
+            .contact h2 {
+                font-size: 2rem;
+            }
+
+            .about p,
+            .services p {
+                font-size: 1rem;
+            }
+
+            .service {
+                margin-bottom: 30px;
+            }
+
+            .contact-form {
+                padding: 20px;
+            }
+
+            .cta-button {
+                font-size: 1rem;
+                padding: 10px 20px;
+                background-color: #3ce74d;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul li {
+                margin-bottom: 15px;
+            }
+
+            .intro h1 {
+                font-size: 2rem;
+            }
+
+            .intro p {
+                font-size: 0.9rem;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    <!-- Google Font Import -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="intro">
+        <h1>Welcome to Our Web Development Services</h1>
+        <p>Your trusted partner for creating professional websites tailored to your needs.</p>
+        <a href="#contact" class="cta-button">Get In Touch</a>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>We are a leading web development company specializing in delivering custom and scalable solutions for
+            businesses of all sizes. Our team of experts crafts user-friendly websites designed to boost your online
+            presence and help you succeed in the digital world.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service">
+            <h3>Website Design</h3>
+            <p>We design aesthetically pleasing and user-friendly websites tailored to your brand's identity and goals.
+            </p>
+        </div>
+        <div class="service">
+            <h3>Web Development</h3>
+            <p>Our team builds dynamic websites using the latest technologies, ensuring speed, security, and
+                functionality.</p>
+        </div>
+        <div class="service">
+            <h3>E-commerce Solutions</h3>
+            <p>We provide e-commerce development services to help you create a seamless online store experience for your
+                customers.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Have a question or need a quote? We'd love to hear from you! Fill out the form below or reach out to us
+            directly.</p>
+        <form id="contact-form" class="contact-form">
+            <input type="text" name="name" id="name" placeholder="Your Name" required>
+            <input type="email" name="email" id="email" placeholder="Your Email" required>
+            <textarea name="message" id="message" placeholder="Please Enter Your Mobile Number Here" rows="5"
+                required></textarea>
+            <button type="submit" class="cta-button">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 - All rights reserved</p>
+    </footer>
+
+    <!-- Load EmailJS Script before custom script -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+    <!-- Your custom JavaScript code -->
+    <script type="text/javascript">
+        // Initialize EmailJS with your user ID
+        emailjs.init("Tbj-zcJZWZtPJ4XoN");
+
+        // Add event listener to handle form submission
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            // Sending form data to EmailJS
+            emailjs.sendForm('service_i5h1gq6', 'template_0tjsszw', this)
+                .then(function (response) {
+                    console.log('Success:', response);
+                    alert('Your message has been sent successfully!');
+                    document.getElementById('contact-form').reset();
+                }, function (error) {
+                    console.log('Error:', error);
+                    alert('There was an error sending your message. Please try again later.');
+                });
+        });
+    </script>
+</body>
+
+</html> 
