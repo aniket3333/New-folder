@@ -278,6 +278,60 @@
             /* Fade-in animation */
         }
 
+/* UI/UX Designs Section */
+.ui-ux-designs {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.ui-ux-designs h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.ui-ux-designs p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.design-category {
+    margin-bottom: 40px;
+}
+
+.design-category h3 {
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.designs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.designs img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.designs img:hover {
+    transform: scale(1.05);
+}
+
+/* Ensure responsiveness for mobile */
+@media (max-width: 768px) {
+    .designs img {
+        width: 100%;
+    }
+}
+
 
 
         /* General Section Styling */
@@ -510,6 +564,43 @@
                 customers.</p>
         </div>
     </section>
+<!-- UI/UX Designs Section -->
+<section id="ui-ux-designs" class="ui-ux-designs">
+    <h2>Our UI/UX Designs</h2>
+    <p>Explore our beautifully crafted designs tailored for different industries.</p>
+
+    <div class="design-category">
+        <h3>Business Landing Page</h3>
+        <div class="designs">
+            <img src="https://cdn.dribbble.com/userupload/16895469/file/still-9916c6391b7f6b435387c52e1fe1a5da.png?format=webp&resize=450x338&vertical=center" alt="Business Landing Page Design">
+            <img src="https://cdn.dribbble.com/userupload/16100085/file/original-fca5a5f9dbce7873724809a3e01c96eb.jpg?resize=1024x768&vertical=center" alt="Business Landing Page Design 2">
+        </div>
+    </div>
+
+    <div class="design-category">
+        <h3>Gym Website Design</h3>
+        <div class="designs">
+            <img src="https://cdn.dribbble.com/userupload/16710995/file/original-d9bf59dce93a2a1a33f919f38a54f8d6.png?format=webp&resize=640x480&vertical=center" alt="Gym Website Design">
+            <img src="https://cdn.dribbble.com/userupload/16859307/file/original-09f2fe8458acbc6f5839c7a9ecc205fa.png?format=webp&resize=450x338&vertical=center" alt="Gym Website Design 2">
+        </div>
+    </div>
+
+    <div class="design-category">
+        <h3>Grocery Store Design</h3>
+        <div class="designs">
+            <img src="https://img.freepik.com/premium-vector/flat-design-online-grocery-store-landing-page_23-2150104094.jpg?ga=GA1.1.1026813798.1734860279&semt=ais_hybrid" alt="Grocery Store Design">
+            <img src="https://img.freepik.com/premium-vector/hand-drawn-online-business-horizontal-banner-template_23-2151537587.jpg?ga=GA1.1.1026813798.1734860279&semt=ais_hybrid" alt="Grocery Store Design 2">
+        </div>
+    </div>
+
+    <div class="design-category">
+        <h3>Hospital Website Design</h3>
+        <div class="designs">
+            <img src="https://cdn.dribbble.com/users/3619571/screenshots/15714652/media/14f55207fc91ee54c5dff7d8ed0ef103.jpg?format=webp&resize=640x480&vertical=center" alt="Hospital Website Design">
+            <img src="https://cdn.dribbble.com/userupload/13575163/file/original-9e7566c2ac8ec76207e075fb3283f219.png?crop=0x0-2400x1800&format=webp&resize=450x338&vertical=center" alt="Hospital Website Design 2">
+        </div>
+    </div>
+</section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
