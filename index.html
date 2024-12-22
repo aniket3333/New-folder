@@ -509,6 +509,25 @@
                 font-size: 0.9rem;
             }
         }
+
+        /* Mobile View */
+@media (max-width: 768px) {
+    .nav-links {
+        display: flex; /* Keep it as flex */
+        flex-direction: row; /* Display in a row */
+        justify-content: space-around; /* Distribute links evenly */
+        padding: 0; /* Remove any extra padding */
+    }
+
+    .nav-links li {
+        margin: 0; /* Remove margin between list items */
+    }
+
+    .nav-links a {
+        font-size: 16px; /* Adjust font size for mobile */
+        padding: 10px; /* Ensure padding for clickable area */
+    }
+}
     </style>
     <!-- Google Font Import -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
@@ -520,7 +539,7 @@
         <nav>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
