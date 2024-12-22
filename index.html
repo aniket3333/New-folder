@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hiware</title>
+    <title>Web Development Services</title>
     <style>
         /* General Reset */
         * {
@@ -278,6 +278,76 @@
             /* Fade-in animation */
         }
 
+
+
+        /* General Section Styling */
+#home {
+    text-align: center;
+    padding: 50px;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+/* CTA Button Styling */
+.cta-button {
+    display: inline-block;
+    background-color: #2bc03c;
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 40px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ae2927;
+    color: #ecf0f1;
+    transform: scale(1.40);
+}
+
+/* Contact Number Styling */
+.contact-number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #f0e8e8f8; /* Green color for the contact number */
+    display: inline-block;
+    margin-top: 10px;
+    opacity: 0; /* Initially invisible for the fade-in effect */
+    animation: fadeIn 1s forwards, bounce 1s 1.5s ease-in-out infinite; /* Fade in and bounce */
+    cursor: pointer;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Hover Effect: Slight grow and color change */
+.contact-number:hover {
+    color: #27ae60; /* Light green when hovered */
+    transform: scale(1.1); /* Slightly enlarge */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+
         /* Fade-in effect */
         @keyframes fadeIn {
             0% {
@@ -409,8 +479,8 @@
         <p>Your trusted partner for creating professional websites tailored to your needs.</p>
         <a href="#contact" class="cta-button">Get In Touch</a>
         <br/>
-        <span>Or contact : </span><br/>
-        <span>7558363862</span>
+        <span>Or contact: </span><br/>
+        <span id="contact-number" class="contact-number">7558363862</span>
     </section>
 
     <!-- About Us Section -->
